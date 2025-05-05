@@ -1,0 +1,152 @@
+/* Navbar ерөнхий стиль */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Wrapper */
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8px;
+  }
+  
+  /* Logo */
+  .navbar-logo h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #0af;
+  }
+  
+  /* Dropdown үндсэн цэс */
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-links li {
+    position: relative;
+  }
+  
+  .navbar-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 10px 8px;
+    display: block;
+    transition: color 0.5s;
+  }
+  
+  .navbar-links li a:hover {
+    color: #0af;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 100px;
+    z-index: 999;
+  }
+  
+  .dropdown-menu li a {
+    padding: 10px 15px;
+    color: white;
+    display: block;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #333;
+  }
+  
+  .navbar-links li:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .navbar-search input {
+    padding: 6px 12px;
+    background-color: #333;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  .navbar-profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .mobile-menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
+
+  
+  @media (max-width: 768px) {
+    .navbar-links {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+      margin-top: 10px;
+    }
+  
+    .navbar-links.active {
+      display: flex;
+    }
+  
+    .navbar-search {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .mobile-menu-icon {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+  
+    /* Dropdown responsive дотор */
+    .dropdown-menu {
+      position: static;
+      box-shadow: none;
+      background-color: transparent;
+    }
+  
+    .dropdown-menu li a {
+      padding-left: 30px;
+    }
+  
+    .navbar-links li:hover .dropdown-menu {
+      display: none;
+    }
+  
+    .navbar-links .dropdown.active .dropdown-menu {
+      display: block;
+    }
+  }
+  
+  
